@@ -23,7 +23,6 @@ class ControllersDiagram < AppDiagram
       class_name = extract_class_name(f)
       # ApplicationController's file is 'application.rb'
       class_name += 'Controller' if class_name == 'Application'
-puts class_name
       process_class class_name.constantize
     end 
   end # generate
