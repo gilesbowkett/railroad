@@ -35,6 +35,10 @@ class ControllersDiagram < AppDiagram
       disable_stdout
       # ApplicationController must be loaded first
       require "app/controllers/application_controller.rb" 
+      # my particular app subclasses this often
+      require 'app/controllers/admin/admin_area_controller.rb'
+      # obviously this is either going to turn into a private project rapidly, or take on
+      # command-line args for specifying an explicit sequence of controllers to require
       files = Dir.glob("app/controllers/**/*_controller.rb") - @options.exclude
       files.each {|c| require c }
       enable_stdout
