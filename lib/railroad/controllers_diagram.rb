@@ -10,7 +10,6 @@ require 'railroad/app_diagram'
 class ControllersDiagram < AppDiagram
  
   def initialize(options)
-    #options.exclude.map! {|e| "app/controllers/" + e}
     super options
     @graph.diagram_type = 'Controllers'
   end
